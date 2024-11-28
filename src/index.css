@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --container-size: 1200px;
+    }
+}
+
+@layer utilities {
+    .slide-center {
+        transform: translateX(
+            calc(
+                max(var(--container-size), 100vw) / 2 -
+                    calc(var(--container-size) / 2)
+            )
+        );
+    }
+}
+
+/* 
+    If the width of the browser window is larger than 1200px, 
+    the result will be 100vw, which will be the width of the browser window, 
+    for example, 1600px.
+    If the width of the browser window is smaller than 1200px, 
+    the result will be 1200px.
+*/
+
